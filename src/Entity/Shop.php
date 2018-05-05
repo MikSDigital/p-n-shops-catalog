@@ -4,6 +4,8 @@ namespace App\Entity;
 
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -40,6 +42,8 @@ class Shop
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Upload logo image for this shop!")
+     * @Assert\File()
      */
     private $logo;
 
@@ -108,7 +112,7 @@ class Shop
         return $this->logo;
     }
 
-    public function setLogo(string $logo): self
+    public function setLogo($logo)
     {
         $this->logo = $logo;
 

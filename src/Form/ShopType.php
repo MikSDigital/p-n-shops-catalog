@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Shop;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,7 +20,9 @@ class ShopType extends AbstractType
             ->add('description', TextareaType::class, [
                 'attr' => ['rows' => 20],
             ])
-            ->add('logo')
+            ->add('logo', FileType::class, [
+                'label' => 'Shop logo'
+            ])
             ->add('rating')
         ;
     }
