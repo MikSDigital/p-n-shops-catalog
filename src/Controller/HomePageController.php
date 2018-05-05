@@ -8,10 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class HomePageController extends Controller
 {
     /**
-     * @Route("/", name="home_page")
+     * @Route("/", name="front")
      */
     public function index()
     {
-        return $this->render('home_page/index.html.twig', []);
+        return $this->render('front/index.html.twig', []);
     }
 }

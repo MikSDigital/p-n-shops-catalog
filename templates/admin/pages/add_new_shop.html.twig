@@ -1,0 +1,39 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block pageTitle %}
+    Add new shop
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Add new shop</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br />
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button class="btn btn-success" type="submit">{{ button_label|default('Save') }}</button>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <!-- iCheck -->
+    <script src="{{ asset('dashboard/vendors/iCheck/icheck.min.js') }}"></script>
+    <!-- Switchery -->
+    <script src="{{ asset('dashboard/vendors/switchery/dist/switchery.min.js') }}"></script>
+
+{% endblock %}

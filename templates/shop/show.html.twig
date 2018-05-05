@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Shop{% endblock %}
+
+{% block body %}
+    <h1>Shop</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ shop.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ shop.name }}</td>
+            </tr>
+            <tr>
+                <th>Link_to_website</th>
+                <td>{{ shop.link_to_website }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ shop.slug }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ shop.description }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td>{{ shop.logo }}</td>
+            </tr>
+            <tr>
+                <th>Rating</th>
+                <td>{{ shop.rating }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('shop_index') }}">back to list</a>
+
+    <a href="{{ path('shop_edit', {'id': shop.id}) }}">edit</a>
+
+    {{ include('shop/_delete_form.html.twig') }}
+{% endblock %}

@@ -7,9 +7,9 @@ page title
 {% block body %}
     {{ parent() }}
 
-    {% include 'admin/pages/price_table.html.twig' %}
+    {% include 'admin/partials/price_table.html.twig' %}
 
-    {% include 'admin/pages/forms.html.twig' %}
+    {% include 'admin/partials/forms.html.twig' %}
 
 {% endblock %}
 
@@ -45,6 +45,5 @@ page title
     <script src="{{ asset('dashboard/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js') }}"></script>
     <!-- starrr -->
     <script src="{{ asset('dashboard/vendors/starrr/dist/starrr.js') }}"></script>
-
 
 {% endblock %}
