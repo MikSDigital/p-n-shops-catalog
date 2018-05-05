@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}Website dashboard{% endblock %}</title>
+
+    {% block stylesheets %}
+        <!-- bootstrap & fontawesome -->
+        <link rel="stylesheet" href="{{ asset('dashboard/vendors/bootstrap/dist/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('dashboard/vendors/font-awesome/css/font-awesome.min.css') }}" />
+        <!-- NProgress -->
+        <link rel="stylesheet" href="{{ asset('dashboard/vendors/nprogress/nprogress.css') }}" />
+        <!-- bootstrap-daterangepicker -->
+        <link rel="stylesheet" href="{{ asset('dashboard/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" />
+
+        <!-- Custom Theme Style -->
+        <link rel="stylesheet" href="{{ asset('dashboard/build/css/custom.min.css') }}" />
+    {% endblock %}
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body class="nav-md">
+
+<div class="container body">
+    <div class="main_container">
+
+        {% include 'admin/partials/sidebar_menu_raw.html.twig' %}
+        {% include 'admin/partials/top_navigation_raw.html.twig' %}
+
+        <div class="right_col" role="main">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>
+                                {% block pageTitle %}
+
+                                {% endblock %}
+                            </h3>
+                        </div>
+
+                        <div class="title_right">
+                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            {% block body %}
+                {% include 'admin/partials/alert_messages.html.twig' %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+{% block javascripts %}
+    <!-- jQuery -->
+    <script src="{{ asset('dashboard/vendors/jquery/dist/jquery.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('dashboard/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+{% endblock %}
+
+{% block customjs %}
+    <script src="{{ asset('dashboard/build/js/custom.js') }}"></script>
+{% endblock %}
+
+</body>
+</html>
